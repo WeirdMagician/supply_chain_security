@@ -1,12 +1,12 @@
 name: Generate SBOM Report with Syft
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  workflow_dispatch:  # This allows manual triggering
+    inputs:
+      message:
+        description: 'Message to print'
+        required: true
+        default: 'Hello, world!'
 
 jobs:
   generate-sbom:
